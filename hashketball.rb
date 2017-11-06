@@ -205,7 +205,6 @@ def big_shoe_rebounds
     if game_hash[:away][:players][biggest][:shoe] < game_hash[:away][:players][player][:shoe]
       biggest = player
     end
-    player
   end
   if game_hash[:home][:players].include?(biggest)
     puts game_hash[:home][:players][biggest][:rebounds]
