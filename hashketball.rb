@@ -218,3 +218,24 @@ def big_shoe_rebounds
     game_hash[:away][:players][biggest][:rebounds]
   end
 end
+
+def most_points_scored
+  most = "Alan Anderson"
+  game_hash[:home][:players].keys.each do |player|
+    if game_hash[:home][:players][most][:points] < game_hash[:home][:players][player][:points]
+      most = player
+    end
+  end
+  game_hash[:away][:players].keys.each do |player|
+    if game_hash[:home][:players].keys.include?(most)
+      if game_hash[:home][:players][most][:points] < game_hash[:away][:players][player][:points]
+        most = player
+      end
+    else
+      if game_hash[:away][:players][most][:points] < game_hash[:away][:players][player][:points]
+        most = player
+      end
+    end
+  end
+  most
+end
