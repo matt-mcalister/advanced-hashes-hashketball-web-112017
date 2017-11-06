@@ -202,7 +202,7 @@ def big_shoe_rebounds
     end
   end
   game_hash[:away][:players].keys.each do |player|
-    if game_hash[:away][:players][biggest][:shoe] < game_hash[:away][:players][player][:shoe] || game_hash[:home][:players][biggest][:shoe] < game_hash[:away][:players][player][:shoe]
+    if game_hash[:home][:players][biggest][:shoe] < game_hash[:away][:players][player][:shoe] || game_hash[:away][:players][biggest][:shoe] < game_hash[:away][:players][player][:shoe]
       biggest = player
     end
   end
