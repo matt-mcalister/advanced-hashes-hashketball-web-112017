@@ -183,4 +183,4 @@ def player_numbers(team)
     end
   end
   result
-end  
+end
