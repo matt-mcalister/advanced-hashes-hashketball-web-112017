@@ -276,3 +276,27 @@ def player_with_longest_name
 
   longest
 end
+
+
+def long_name_steals_a_ton?
+  most = "Alan Anderson"
+
+  game_hash[:home][:players].keys.each do |player|
+    if game_hash[:home][:players][most][:steals] < game_hash[:home][:players][player][:steals]
+      most = player
+    end
+  end
+  game_hash[:away][:players].keys.each do |player|
+    if game_hash[:home][:players].keys.include?(most)
+      if game_hash[:home][:players][most][:steals] < game_hash[:away][:players][player][:steals]
+        most = player
+      end
+    else
+      if game_hash[:away][:players][most][:steals] < game_hash[:away][:players][player][:steals]
+        most = player
+      end
+    end
+  end
+
+  most == player_with_longest_name
+end
