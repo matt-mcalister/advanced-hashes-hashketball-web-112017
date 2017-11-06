@@ -201,18 +201,16 @@ def big_shoe_rebounds
       biggest = player
     end
   end
-  # biggest
   # game_hash[:away][:players].keys.each do |player|
   #   if game_hash[:away][:players][biggest][:shoe] < game_hash[:away][:players][player][:shoe]
   #     biggest = player
   #   end
   # end
-  puts biggest
-  # if game_hash[:home][:players].include?(biggest)
-  #   game_hash[:home][:players][biggest][:rebounds]
-  # else
-  #   game_hash[:away][:players][biggest][:rebounds]
-  # end
+  if game_hash[:home][:players].include?(biggest)
+    puts game_hash[:home][:players][biggest][:rebounds]
+  else
+    puts game_hash[:away][:players][biggest][:rebounds]
+  end
 end
 
 big_shoe_rebounds
