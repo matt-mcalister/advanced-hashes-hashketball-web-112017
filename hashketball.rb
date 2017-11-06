@@ -192,3 +192,23 @@ def player_stats(player)
     game_hash[:away][:players][player]
   end
 end
+
+
+def big_shoe_rebounds
+  biggest = "Alan Anderson"
+  game_hash[:home][:players].keys.each do |player|
+    if game_hash[:home][:players][biggest][:shoe] < game_hash[:home][:players][player][:shoe]
+      biggest = player
+    end
+  end
+  game_hash[:away][:players].keys.each do |player|
+    if game_hash[:away][:players][biggest][:shoe] < game_hash[:away][:players][player][:shoe]
+      biggest = player
+    end
+  end
+  if game_hash[:home][:players].include?(biggest)
+    game_hash[:home][:players][biggest][:rebounds]
+  else
+    game_hash[:away][:players][biggest][:rebounds]
+  end
+end
