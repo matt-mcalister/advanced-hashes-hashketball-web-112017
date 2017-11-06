@@ -258,3 +258,21 @@ def winning_team
     game_hash[:away][:team_name]
   end
 end
+
+def player_with_longest_name
+  longest = "Alan Anderson"
+  
+  game_hash[:home][:players].keys.each do |player|
+    if longest.length < player.length
+      longest = player
+    end
+  end
+  
+  game_hash[:away][:players].keys.each do |player|
+    if longest.length < player.length
+      longest = player
+    end
+  end
+  
+  longest
+end
