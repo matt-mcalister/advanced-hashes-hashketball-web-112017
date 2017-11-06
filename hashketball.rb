@@ -142,3 +142,11 @@ def num_points_scored(player)
     game_hash[:away][:players][player][:points]
   end
 end
+
+def shoe_size(player)
+  if game_hash[:home][:players].keys.include?(player)
+    game_hash[:home][:players][player][:shoe]
+  elsif game_hash[:away][:players].keys.include?(player)
+    game_hash[:away][:players][player][:shoe]
+  end
+end
